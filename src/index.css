@@ -87,7 +87,7 @@ body {
     transition: background-color 0.3s ease-in-out;
 
     /* Logo and portfolio text styling */
-    >div:first-child {
+    > div:first-child {
       img {
         transition: filter 0.3s ease-in-out;
       }
@@ -128,13 +128,12 @@ body {
 
   /* Dark mode specific styles for images/icons */
   .dark nav {
-
     /* Invert logo and icons for dark mode */
-    >div:first-child img {
+    > div:first-child img {
       filter: brightness(0) invert(1);
     }
 
-    >div:last-child img {
+    > div:last-child img {
       filter: brightness(0) invert(1);
     }
   }
@@ -204,7 +203,8 @@ body {
     background-color: var(--window-header-bg);
     border-bottom: 1px solid var(--window-header-border);
     color: var(--text-tertiary);
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
   }
 
   #safari {
@@ -216,7 +216,8 @@ body {
       @apply flex items-center gap-3 w-2/3 rounded-lg px-3 py-2;
       background-color: var(--input-bg);
       border: 1px solid var(--input-border);
-      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
 
       input {
         color: var(--text-primary);
@@ -351,19 +352,26 @@ body {
       @apply w-3/12 flex-none flex flex-col p-5;
       background-color: var(--sidebar-bg);
       border-right: 1px solid var(--border-color);
-      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
 
       h2 {
         @apply text-xs font-medium text-gray-400 mb-1;
       }
 
       ul {
-        li {
-          @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+        @apply space-y-1;
 
-          &:first-child {
-            @apply bg-blue-100 text-blue-700;
-          }
+        .active {
+          @apply bg-blue-100 text-blue-700;
+        }
+
+        .not-active {
+          @apply text-gray-700 hover:bg-gray-200;
+        }
+
+        li {
+          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
 
           img {
             @apply w-4;
@@ -426,7 +434,8 @@ body {
       @apply w-48 flex flex-col p-5 space-y-3;
       background-color: var(--sidebar-bg);
       border-right: 1px solid var(--border-color);
-      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
 
       h3 {
         @apply text-xs font-medium text-gray-400 mb-1;
