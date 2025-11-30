@@ -308,6 +308,14 @@ body {
             @apply w-5 me-5;
           }
         }
+
+        .render-time {
+          color: var(--text-primary);
+
+          svg {
+            fill: currentColor;
+          }
+        }
       }
     }
   }
@@ -324,6 +332,10 @@ body {
     h3 {
       @apply text-xl font-semibold;
       color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
     }
 
     ul {
@@ -347,6 +359,16 @@ body {
     @apply max-w-3xl absolute top-96 left-1/2 -translate-y-1/2 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     background-color: var(--window-bg);
     transition: background-color 0.3s ease-in-out;
+
+    .gallery-title {
+      @apply text-2xl font-semibold;
+      color: var(--text-primary);
+    }
+
+    .empty-state {
+      @apply text-center;
+      color: var(--text-secondary);
+    }
 
     .sidebar {
       @apply w-3/12 flex-none flex flex-col p-5;
@@ -438,7 +460,8 @@ body {
         border-color 0.3s ease-in-out;
 
       h3 {
-        @apply text-xs font-medium text-gray-400 mb-1;
+        @apply text-xs font-medium mb-1;
+        color: var(--text-tertiary);
       }
 
       ul {
@@ -449,7 +472,11 @@ body {
         }
 
         .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
+          color: var(--text-secondary);
+          
+          &:hover {
+            background-color: var(--nav-hover-bg);
+          }
         }
 
         li {
@@ -472,6 +499,7 @@ body {
 
         p {
           @apply text-sm text-center font-medium w-40;
+          color: var(--text-primary);
         }
       }
     }
@@ -484,6 +512,15 @@ body {
 
     h2 {
       @apply font-bold text-sm text-center w-full;
+    }
+
+    .subtitle {
+      @apply text-xl font-semibold mb-4;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
     }
   }
 

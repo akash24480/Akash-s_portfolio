@@ -19,7 +19,7 @@ const Image = () => {
         <h2>{name}</h2>
       </div>
 
-      <div className='bg-white p-6 h-full overflow-y-auto flex items-center justify-center'>
+      <div className='p-6 h-full overflow-y-auto flex items-center justify-center'>
         {imageUrl && (
           <img 
             src={imageUrl} 

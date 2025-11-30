@@ -19,13 +19,13 @@ const Text = () => {
         <h2>{name}</h2>
       </div>
 
-      <div className='bg-white p-6 h-full overflow-y-auto'>
+      <div className='p-6 h-full overflow-y-auto'>
         {/* Optional image */}
         {image && (
           <div className='mb-6'>
             <img 
-              src={data.image} 
-              alt={data.name} 
+              src={image} 
+              alt={name} 
               className='w-full max-w-md rounded-lg shadow-md'
             />
           </div>
@@ -33,7 +33,7 @@ const Text = () => {
 
         {/* Optional subtitle */}
         {subtitle && (
-          <h3 className='text-xl font-semibold mb-4 text-gray-800'>
+          <h3 className='subtitle'>
             {subtitle}
           </h3>
         )}
@@ -42,7 +42,7 @@ const Text = () => {
         {description && description.length > 0 && (
           <div className='space-y-4'>
             {description.map((paragraph, index) => (
-              <p key={index} className='text-gray-700 leading-relaxed'>
+              <p key={index} className='leading-relaxed'>
                 {paragraph}
               </p>
             ))}

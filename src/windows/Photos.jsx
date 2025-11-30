@@ -26,7 +26,7 @@ const Photos = () => {
         <h2>Photos</h2>
       </div>
 
-      <div className='bg-white flex h-full'>
+      <div className='flex h-full'>
         {/* Sidebar */}
         <div className='sidebar'>
           <div>
@@ -48,23 +48,27 @@ const Photos = () => {
 
         {/* Gallery Content */}
         <div className='flex-1 p-6 overflow-y-auto'>
-          <h2 className='text-2xl font-semibold mb-6'>{activeCategory?.title}</h2>
+          <h2 className='gallery-title'>{activeCategory?.title}</h2>
           
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-            {activeCategory?.photos?.map((photo) => (
-              <div 
-                key={photo.id}
-                onClick={() => handlePhotoClick(photo)}
-                className='cursor-pointer group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow'
-              >
-                <img 
-                  src={photo.img} 
-                  alt={`Photo ${photo.id}`}
-                  className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
-                />
-              </div>
-            )) || <p className='text-gray-500'>No photos in this album</p>}
-          </div>
+          {activeCategory?.photos && activeCategory.photos.length > 0 ? (
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+              {activeCategory.photos.map((photo) => (
+                <div 
+                  key={photo.id}
+                  onClick={() => handlePhotoClick(photo)}
+                  className='cursor-pointer group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow'
+                >
+                  <img 
+                    src={photo.img} 
+                    alt={`Photo ${photo.id}`}
+                    className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className='empty-state'>No photos in this album</p>
+          )}
         </div>
       </div>
     </>

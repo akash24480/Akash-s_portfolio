@@ -42,12 +42,7 @@ const dockApps = [
     icon: "finder.png",
     canOpen: true,
   },
-  {
-    id: "safari",
-    name: "Articles", // was "Safari"
-    icon: "safari.png",
-    canOpen: true,
-  },
+
   {
     id: "photos",
     name: "Gallery", // was "Photos"
@@ -74,55 +69,36 @@ const dockApps = [
   },
 ];
 
-const blogPosts = [
-  {
-    id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
-  },
-];
+
 
 const techStack = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    items: ["React.js", "Next.js", "TypeScript", "Javascript", "HTML"],
   },
-  {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
+
+    {
+    category: "Languages",
+    items: ["Python", "JavaScript"],
   },
+
+
+
   {
     category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    items: ["Tailwind CSS", "Bootstrap", "Material UI",  "Sass", "CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express", "django", "REST API"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Jira"],
   },
 ];
 
@@ -132,80 +108,30 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/akash24480",
   },
-  {
-    id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
-    bg: "#4bcb63",
-    link: "https://jsmastery.com/",
-  },
-  {
-    id: 3,
-    text: "Twitter/X",
-    icon: "/icons/twitter.svg",
-    bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
-  },
+  
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/akash0024/",
   },
 ];
 
 const photosLinks = [
-  {
-    id: 1,
-    icon: "/icons/gicon1.svg",
-    title: "Library",
-    photos: [
-      { id: 1, img: "/images/gal1.png" },
-      { id: 2, img: "/images/gal2.png" },
-      { id: 3, img: "/images/gal3.png" },
-      { id: 4, img: "/images/gal4.png" },
-    ],
-  },
-  {
-    id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
-    photos: [
-      { id: 1, img: "/images/gal2.png" },
-      { id: 2, img: "/images/gal3.png" },
-    ],
-  },
-  {
-    id: 3,
-    icon: "/icons/file.svg",
-    title: "Places",
-    photos: [
-      { id: 1, img: "/images/gal1.png" },
-      { id: 2, img: "/images/gal4.png" },
-    ],
-  },
-  {
-    id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
-    photos: [
-      { id: 1, img: "/images/gal3.png" },
-      { id: 2, img: "/images/gal4.png" },
-    ],
-  },
-  {
-    id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
-    photos: [
-      { id: 1, img: "/images/gal1.png" },
-      { id: 2, img: "/images/gal2.png" },
-      { id: 3, img: "/images/gal3.png" },
-    ],
-  },
+  // {
+  //   id: 1,
+  //   icon: "/icons/gicon1.svg",
+  //   title: "Library",
+  //   photos: [
+  //     { id: 1, img: "/images/gal1.png" },
+  //     { id: 2, img: "/images/gal2.png" },
+  //     { id: 3, img: "/images/gal3.png" },
+  //     { id: 4, img: "/images/gal4.png" },
+  //   ],
+  // },
 ];
 
 const gallery = [
@@ -231,7 +157,6 @@ export {
   navLinks,
   navIcons,
   dockApps,
-  blogPosts,
   techStack,
   socials,
   photosLinks,
