@@ -80,8 +80,11 @@ const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {dockApps.map(({ id, name, icon, canOpen }) => (
-          <div key={id} className="relative flex jusify-center">
+        {dockApps.map(({ id, name, icon, canOpen }, index) => (
+          <div 
+            key={id} 
+            className={`relative flex jusify-center ${index === dockApps.length - 1 ? 'hidden sm:flex' : ''}`}
+          >
             <button
               type="button"
               className="dock-icon"

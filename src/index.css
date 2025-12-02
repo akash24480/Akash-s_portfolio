@@ -82,7 +82,7 @@ body {
   }
 
   nav {
-    @apply flex justify-between items-center backdrop-blur-3xl p-2 px-5 select-none;
+    @apply hidden md:flex justify-between items-center backdrop-blur-3xl p-2 px-5 select-none ;
     background-color: var(--nav-bg);
     transition: background-color 0.3s ease-in-out;
 
@@ -99,20 +99,12 @@ body {
     }
 
     div {
-      @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
+      @apply flex items-center max-sm:w-full max-sm:justify-between gap-5;
 
-      &:last-child {
-        @apply max-sm:hidden;
-
-        /* Icons in right side of navbar */
-        img {
-          transition: filter 0.3s ease-in-out;
-        }
-      }
     }
 
     ul {
-      @apply flex items-center gap-5 max-sm:hidden;
+      @apply flex items-center max-sm:w-full max-sm:justify-end gap-5;
 
       p {
         @apply text-sm cursor-pointer hover:underline transition-all;
@@ -124,17 +116,44 @@ body {
       @apply text-sm font-medium;
       color: var(--nav-text);
     }
+
+    /* Mobile nav SVG icons */
+    .mobile_nav svg {
+      color: var(--nav-text);
+      transition: color 0.3s ease-in-out;
+    }
   }
 
   /* Dark mode specific styles for images/icons */
   .dark nav {
     /* Invert logo and icons for dark mode */
-    > div:first-child img {
+    img {
       filter: brightness(0) invert(1);
     }
+  }
 
-    > div:last-child img {
-      filter: brightness(0) invert(1);
+  /* Mobile navbar section styling */
+  #mobile-navbar {
+    time {
+      @apply text-sm font-medium;
+      color: var(--nav-text);
+      transition: color 0.3s ease-in-out;
+    }
+
+    svg {
+      color: var(--nav-text);
+      transition: color 0.3s ease-in-out;
+    }
+  }
+
+  /* Dark mode for mobile navbar */
+  .dark #mobile-navbar {
+    time {
+      color: var(--nav-text);
+    }
+
+    svg {
+      color: var(--nav-text);
     }
   }
 }
@@ -161,7 +180,7 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none;
 
     .dock-container {
       @apply backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
@@ -174,7 +193,19 @@ body {
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      width: clamp(4rem, 20vw, 5.5rem);
+      height: clamp(4rem, 20vw, 5.5rem);
+      cursor: pointer;
+
+      @media (min-width: 640px) {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      @media (min-width: 1920px) {
+        width: 5rem;
+        height: 5rem;
+      }
 
       img {
         @apply object-cover object-center;
@@ -276,8 +307,17 @@ body {
     .techstack {
       @apply text-sm font-roboto p-5;
 
+      > p {
+        color: var(--text-secondary);
+      }
+
       .label {
         @apply flex items-center ms-10 mt-7;
+        color: var(--text-secondary);
+
+        p {
+          color: var(--text-secondary);
+        }
       }
 
       .content {
@@ -294,6 +334,10 @@ body {
 
           ul {
             @apply flex items-center gap-3;
+
+            li {
+              color: var(--text-secondary);
+            }
           }
         }
       }
@@ -378,7 +422,13 @@ body {
         border-color 0.3s ease-in-out;
 
       h2 {
-        @apply text-xs font-medium text-gray-400 mb-1;
+        @apply text-xs font-medium mb-1;
+        color: var(--text-tertiary);
+      }
+
+      h3 {
+        @apply text-xs font-medium mb-1;
+        color: var(--text-tertiary);
       }
 
       ul {
@@ -389,7 +439,11 @@ body {
         }
 
         .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
+          color: var(--text-secondary);
+          
+          &:hover {
+            background-color: var(--nav-hover-bg);
+          }
         }
 
         li {
@@ -401,6 +455,7 @@ body {
 
           p {
             @apply text-sm font-medium;
+            color: var(--text-primary);
           }
         }
       }

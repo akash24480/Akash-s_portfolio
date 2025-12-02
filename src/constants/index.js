@@ -73,31 +73,29 @@ const dockApps = [
 
 const techStack = [
   {
-    category: "Frontend",
+    category:"Frontend",
     items: ["React.js", "Next.js", "TypeScript", "Javascript", "HTML"],
   },
 
     {
-    category: "Languages",
+    category:"Languages",
     items: ["Python", "JavaScript"],
   },
 
-
-
   {
-    category: "Styling",
+    category:"Styling",
     items: ["Tailwind CSS", "Bootstrap", "Material UI",  "Sass", "CSS"],
   },
   {
-    category: "Backend",
+    category:"Backend",
     items: ["Node.js", "Express", "django", "REST API"],
   },
   {
-    category: "Database",
+    category:"Database",
     items: ["MongoDB", "PostgreSQL", "MySQL"],
   },
   {
-    category: "Dev Tools",
+    category:"Dev Tools",
     items: ["Git", "GitHub", "Jira"],
   },
 ];
@@ -199,7 +197,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+          href: "https://github.com/akash24480",
           position: "top-10 right-20",
         },
         {
@@ -252,7 +250,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+          href: "https://github.com/akash24480",
           position: "top-20 left-20",
         },
         {
@@ -305,7 +303,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
+          href: "https://github.com/akash24480",
           position: "top-10 right-20",
         },
         {
@@ -341,29 +339,29 @@ const ABOUT_LOCATION = {
     {
       id: 1,
       name: "me.png",
-      icon: "/images/image.png",
+      icon: "/images/akash.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/akash.jpeg",
     },
     {
       id: 2,
       name: "casual-me.png",
-      icon: "/images/image.png",
+      icon: "/images/akash.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
+      imageUrl: "/images/akash.jpeg",
     },
     {
       id: 3,
       name: "conference-me.png",
-      icon: "/images/image.png",
+      icon: "/images/akash.jpeg",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
+      imageUrl: "/images/akash.jpeg",
     },
     {
       id: 4,
@@ -373,12 +371,11 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/akash.jpeg",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
+        "Hey! I’m Akash 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
         "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",,
       ],
     },
   ],
