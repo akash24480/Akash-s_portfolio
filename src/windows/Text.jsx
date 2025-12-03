@@ -14,9 +14,16 @@ const Text = () => {
 
   return (
     <>
-      <div id='window-header'>
+      <div id='window-header' className='hidden md:flex'>
         <WindowControlls target="txtfile" />
         <h2>{name}</h2>
+      </div>
+
+      <div id='mobile-window-header' className='flex justify-between items-center px-3 pb-3 md:hidden relative z-50 mt-16'>
+        <div className='flex-1 flex items-center gap-2'>
+          <WindowControlls target="txtfile" />
+        </div>
+        <p className="flex-[1.5] text-lg font-georama text-black line-clamp-1">{name}</p>
       </div>
 
       <div className='p-6 h-full overflow-y-auto'>

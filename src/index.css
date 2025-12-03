@@ -136,12 +136,12 @@ body {
   #mobile-navbar {
     time {
       @apply text-sm font-medium;
-      color: var(--nav-text);
+      color: #ffffff;
       transition: color 0.3s ease-in-out;
     }
 
     svg {
-      color: var(--nav-text);
+      color: #ffffff;
       transition: color 0.3s ease-in-out;
     }
   }
@@ -149,11 +149,11 @@ body {
   /* Dark mode for mobile navbar */
   .dark #mobile-navbar {
     time {
-      color: var(--nav-text);
+      color: #ffffff;
     }
 
     svg {
-      color: var(--nav-text);
+      color: #ffffff;
     }
   }
 }
@@ -231,6 +231,15 @@ body {
 
   #window-header {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg select-none text-sm;
+    background-color: var(--window-header-bg);
+    border-bottom: 1px solid var(--window-header-border);
+    color: var(--text-tertiary);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+
+  #mobile-window-header {
+    @apply flex items-center justify-between px-3 py-2 rounded-t-lg select-none text-sm;
     background-color: var(--window-header-bg);
     border-bottom: 1px solid var(--window-header-border);
     color: var(--text-tertiary);
@@ -558,6 +567,26 @@ body {
         }
       }
     }
+  }
+
+  #mobile-finder{
+    @apply absolute w-[100vw] h-[100vh] left-0 top-0 z-[50] overflow-hidden;
+    background-color: var(--window-bg);
+  }
+
+  #mobile-txtfile {
+    @apply absolute w-[100vw] h-[100vh] left-0 top-0 z-[60] overflow-y-auto;
+    background-color: var(--window-bg);
+  }
+
+  #mobile-imgfile {
+    @apply absolute w-[100vw] h-[100vh] left-0 top-0 z-[60] overflow-y-auto;
+    background-color: var(--window-bg);
+  }
+
+  #mobile-resume {
+    @apply absolute w-[100vw] h-[100vh] left-0 top-0 z-[60] overflow-y-auto overflow-x-hidden;
+    background-color: var(--window-bg);
   }
 
   #txtfile {

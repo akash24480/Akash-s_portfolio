@@ -51,12 +51,37 @@ const Dock = () => {
         })
       );
 
+    // Touch event handlers for mobile
+    const handleTouchStart = (e) => {
+      const target = e.target.closest('.dock-icon');
+      if (target) {
+        gsap.to(target, {
+          scale: 1.25,
+          y: -15,
+          duration: 0.1,
+          ease: "power1.out",
+        });
+
+        // Auto-reset after 400ms
+        setTimeout(() => {
+          gsap.to(target, {
+            scale: 1,
+            y: 0,
+            duration: 0,
+            ease: "power1.out",
+          });
+        }, 400);
+      }
+    };
+
     dock.addEventListener("mousemove", handleMouseMove);
     dock.addEventListener("mouseleave", resetIcons);
+    dock.addEventListener("touchstart", handleTouchStart);
 
     return () => {
       dock.removeEventListener("mousemove", handleMouseMove);
       dock.removeEventListener("mouseleave", resetIcons);
+      dock.removeEventListener("touchstart", handleTouchStart);
     };
 
   }, []);

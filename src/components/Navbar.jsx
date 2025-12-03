@@ -7,7 +7,8 @@ import { useWindowStore } from "#store/window";
 const Navbar = () => {
   const { toggleTheme } = useTheme();
 
-  const { openWindow } = useWindowStore();
+  const { openWindow, windows } = useWindowStore();
+  const isAnyWindowOpen = Object.values(windows).some(win => win.isOpen);
 
   return (
     <>
@@ -46,9 +47,10 @@ const Navbar = () => {
     </nav>
     <section
         id="mobile-navbar"
-        className="flex justify-between items-center py-3 px-5 gap-5 sm:hidden relative z-10000"
+        className="flex justify-between items-center py-3 px-5 gap-5 sm:hidden absolute top-0 w-full z-[9999]"
+        style={{backgroundColor: isAnyWindowOpen ? 'var(--window-bg)' : 'transparent', transition: 'background-color 0.3s ease'}}
       >
-        <time>{dayjs().format("h:mm A")}</time>
+        <time className="text-black">{dayjs().format("h:mm A")}</time>
         <div className="bg-black flex-1 rounded-full px-2 py-5"></div>
         <ul className="flex items-center gap-2">
           <li>
@@ -58,7 +60,7 @@ const Navbar = () => {
               height="26"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="black"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -78,7 +80,7 @@ const Navbar = () => {
               height="26"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="black"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"

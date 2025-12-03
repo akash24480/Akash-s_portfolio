@@ -16,7 +16,6 @@ const WindowWrapper = (Component, windowKey) => {
            const el = ref.current;
            if(!el || !isOpen) return;
 
-           el.style.display = "block";
            gsap.fromTo(el, {
             scale:0.8,
             opacity:0,
@@ -49,21 +48,24 @@ const WindowWrapper = (Component, windowKey) => {
 
         }, [])
 
-        useLayoutEffect(() => {
-          const el = ref.current;
-          if(!el) return;
-          
-          el.style.display = isOpen ? "block" : "none";
-          
-          
 
-          
-        }, [isOpen])
-
-
-        return <section id={windowKey} ref={ref} style={{zIndex}} className='absolute'>
+        return (
+            <>
+            <section 
+                id={windowKey} 
+                ref={ref} 
+                style={{zIndex}} 
+                className={`absolute hidden md:block ${!isOpen ? '!hidden' : ''}`}
+            >
             <Component {...props} />
         </section>
+
+
+        <section id={`mobile-${windowKey}`} className={`md:hidden ${!isOpen ? '!hidden' : ''}`}>
+            <Component {...props} />
+        </section>
+        </>
+        )
     }
 
     Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || 'Component'})`;
