@@ -6,10 +6,18 @@ import WindowControlls from '#components/WindowControlls'
 const Terminal = () => {
   return (
     <>
-    <div id='window-header'>
+    <div id='window-header' className='hidden md:flex'>
         <WindowControlls target='terminal' />
          <h2>Tech Stack</h2>
     </div>
+
+    <div id='mobile-window-header' className='flex justify-between items-center px-3 pb-3 md:hidden relative z-50 py-18'>
+        <div className='flex-1 flex items-center gap-2'>
+            <WindowControlls target="terminal" />
+        </div>
+        <p className="flex-[1.5] text-lg font-georama text-black line-clamp-1">Tech Stack</p>
+       
+    </div> 
 
     <div className='techstack'>
         <p>
@@ -17,20 +25,20 @@ const Terminal = () => {
             show tech stack
         </p>
 
-        <div className='label'>
+        <div className='label hidden md:flex'>
             <p className='w-32'>Category</p>
             <p>Technologies</p>
         </div>
 
         <ul className='content'>
             {techStack.map(({category, items}) => (
-                <li key={category} className='flex items-center'>
-                    <Check className='check' size={20} />
-                    <h3>{category}</h3>
+                <li key={category} className='flex flex-col items-start mb-4 md:mb-0 md:flex-row md:items-center'>
+                    <Check className='check hidden md:flex' size={20} />
+                    <h3 className='mb-3 md:mb-0'>{category}</h3>
 
-                    <ul>
+                    <ul className='flex flex-col md:flex-row items-start'>
                         {items.map((item, i) => (
-                            <li key={i}>{item}{i < items.length - 1 ? "," : ""}</li>
+                            <li key={i} className=''>{item}{i < items.length - 1 ? "," : ""}</li>
                         ))}
                     </ul>
                 </li>

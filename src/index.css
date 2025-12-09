@@ -373,6 +373,75 @@ body {
     }
   }
 
+    #mobile-terminal {
+    @apply w-[100vw] h-[100vh] absolute top-0 left-0 overflow-scroll z-60;
+    background-color: var(--terminal-bg);
+    transition: background-color 0.3s ease-in-out;
+
+    h2 {
+      @apply font-bold text-sm text-center w-full;
+    }
+
+    .techstack {
+      @apply text-sm font-roboto p-5;
+
+      > p {
+        color: var(--text-secondary);
+      }
+
+      .label {
+        @apply flex items-center ms-10 mt-7;
+        color: var(--text-secondary);
+
+        p {
+          color: var(--text-secondary);
+        }
+      }
+
+      .content {
+        @apply py-5 my-5 border-y border-none  space-y-1;
+
+        li {
+          .check {
+            @apply text-[#00A154] w-5;
+          }
+
+          h3 {
+            @apply font-semibold text-[#00A154] w-32 ms-5;
+          }
+
+          ul {
+            @apply flex items-center gap-3;
+
+            li {
+              color: var(--text-secondary);
+            }
+          }
+        }
+      }
+
+      .footnote {
+        @apply text-[#00A154] space-y-1;
+
+        p {
+          @apply flex items-center;
+
+          svg {
+            @apply w-5 me-5;
+          }
+        }
+
+        .render-time {
+          color: var(--text-primary);
+
+          svg {
+            fill: currentColor;
+          }
+        }
+      }
+    }
+  }
+
   #contact {
     @apply max-w-2xl absolute top-60 left-5/12 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     background-color: var(--window-bg);
@@ -408,8 +477,136 @@ body {
     }
   }
 
+    #mobile-contact {
+    @apply w-[100vw] h-[100vh] absolute top-0 left-0 z-60;
+    background-color: var(--window-bg);
+    transition: background-color 0.3s ease-in-out;
+
+    h2 {
+      @apply font-bold text-sm text-center w-full;
+    }
+
+    h3 {
+      @apply text-xl font-semibold;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    ul {
+      @apply flex items-center gap-3;
+
+      li {
+        @apply rounded-lg p-3 w-60 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300;
+
+        a {
+          @apply space-y-5;
+        }
+
+        p {
+          @apply font-semibold text-sm text-white;
+        }
+      }
+    }
+  }
+
   #photos {
     @apply max-w-3xl absolute top-96 left-1/2 -translate-y-1/2 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    background-color: var(--window-bg);
+    transition: background-color 0.3s ease-in-out;
+
+    .gallery-title {
+      @apply text-2xl font-semibold;
+      color: var(--text-primary);
+    }
+
+    .empty-state {
+      @apply text-center;
+      color: var(--text-secondary);
+    }
+
+    .sidebar {
+      @apply w-3/12 flex-none flex flex-col p-5;
+      background-color: var(--sidebar-bg);
+      border-right: 1px solid var(--border-color);
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+
+      h2 {
+        @apply text-xs font-medium mb-1;
+        color: var(--text-tertiary);
+      }
+
+      h3 {
+        @apply text-xs font-medium mb-1;
+        color: var(--text-tertiary);
+      }
+
+      ul {
+        @apply space-y-1;
+
+        .active {
+          @apply bg-blue-100 text-blue-700;
+        }
+
+        .not-active {
+          color: var(--text-secondary);
+          
+          &:hover {
+            background-color: var(--nav-hover-bg);
+          }
+        }
+
+        li {
+          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+
+          img {
+            @apply w-4;
+          }
+
+          p {
+            @apply text-sm font-medium;
+            color: var(--text-primary);
+          }
+        }
+      }
+    }
+
+    .gallery {
+      @apply p-5;
+
+      ul {
+        @apply grid grid-cols-5 grid-rows-5 gap-2.5;
+
+        li {
+          img {
+            @apply size-full object-cover rounded-lg;
+          }
+
+          &:first-child {
+            @apply row-start-1 row-span-3 col-start-1 col-span-3;
+          }
+
+          &:nth-child(2) {
+            @apply row-start-1 row-span-3 col-start-4 col-span-2;
+          }
+
+          &:nth-child(3) {
+            @apply row-start-4 row-span-2 col-start-3 col-span-3;
+          }
+
+          &:last-child {
+            @apply row-start-4 row-span-2 col-start-1 col-span-2;
+          }
+        }
+      }
+    }
+  }
+
+    #mobile-photos {
+    @apply w-[100vw] h-[100vh] absolute top-0 left-0 z-60;
     background-color: var(--window-bg);
     transition: background-color 0.3s ease-in-out;
 

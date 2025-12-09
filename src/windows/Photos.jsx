@@ -21,10 +21,18 @@ const Photos = () => {
 
   return (
     <>
-      <div id='window-header'>
+      <div id='window-header' className='hidden md:flex'>
         <WindowControlls target="photos" />
         <h2>Photos</h2>
       </div>
+
+      <div id='mobile-window-header' className='flex justify-between items-center px-3 pb-3 md:hidden relative z-50 py-18'>
+              <div className='flex-1 flex items-center gap-2'>
+                  <WindowControlls target="photos"/>
+              </div>
+              <p className="flex-[1.5] text-lg font-georama text-black line-clamp-1">Photos</p>
+             
+          </div>   
 
       <div className='flex h-full'>
         {/* Sidebar */}
